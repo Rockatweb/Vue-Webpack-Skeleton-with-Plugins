@@ -1,13 +1,13 @@
 // include required modules
-const path = require('path');
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const path = require('path'); // plugin for working with paths and directories
+const webpack = require('webpack'); // just webpack :^)
+const ExtractTextPlugin = require('extract-text-webpack-plugin'); // extract text from bundles
+const CleanWebpackPlugin = require('clean-webpack-plugin'); // plugin for cleaning folders
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // plugin for creating html with webpack
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin'); // minify javascript
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin'); // favicon plugin
 
-const weblog = require('webpack-log');
+const weblog = require('webpack-log'); // logging module for webpack
 const log = weblog({ name: 'wds' }); // webpack-dev-server
 
 
@@ -34,10 +34,12 @@ module.exports = {
     module: {
         rules: [
             {
+                // support for .vue files in the project
                 test: /\.vue$/,
                 loader: 'vue-loader'
             },
             {
+                // loader for static files
                 test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
                 loader: "url-loader",
                 options: {
@@ -46,6 +48,7 @@ module.exports = {
                 }
             },
             {
+                // loader for sass - css
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
@@ -53,6 +56,7 @@ module.exports = {
                 })
             },
             {
+                // loader for ecma 6+ scripts
                 include: path.resolve("src"),
                 test: /\.js$/,
                 use: {
@@ -177,9 +181,9 @@ module.exports = {
 
 
 /*
-    enable the Uglify-JS plugin only on production build
+    enable the Uglify-JS plugin when not in dev build
 */
-if (ENV === 'production') {
+if (ENV !== 'dev') {
     module.exports.plugins = (module.exports.plugins || []).concat([
         /*
             should the javascript files be minified (i recommend to put that on production only)
