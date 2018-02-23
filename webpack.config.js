@@ -140,7 +140,7 @@ module.exports = {
             https://github.com/jantimon/favicons-webpack-plugin
         */
         new FaviconsWebpackPlugin({
-            logo: './assets/images/html5.png', // Path to Favicon
+            logo: './assets/images/logo.png', // Path to Favicon
             inject: true, // inject it to the html file
             emitStats: false,
             persistentCache: true,
