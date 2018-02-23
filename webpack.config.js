@@ -56,6 +56,14 @@ module.exports = {
                 })
             },
             {
+                // loader for less - css
+                test: /\.less/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader!less-loader'
+                })
+            },
+            {
                 // loader for ecma 6+ scripts
                 include: path.resolve("src"),
                 test: /\.js$/,

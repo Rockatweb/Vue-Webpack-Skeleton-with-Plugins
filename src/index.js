@@ -11,6 +11,11 @@ import moment from 'moment';
 /* import .sass-file */
 import './assets/scss/main.scss';
 
+/* import .less-file */
+import './assets/less/main.less';
+
+
+
 /* App component */
 import App from './components/app';
 
