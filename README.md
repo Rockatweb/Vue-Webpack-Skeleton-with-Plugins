@@ -108,7 +108,7 @@ google_api_key: '""',
 One last thing that i wanna explain you is how you use this package with a PHP project. I have searched the web for hours to find a good answer how to do so, but i didn't find it anywhere (beside some short explanations that this is somehow possible).
 I think the best way to use it with a backend is to build the backend as an (rest)api and separate it completely from the frontend. 
 The good thing of this solution is that the backend developer can completly focus on the api and dont have anything to do with the frontend. 
-With this solution in mind it is also easier maybe dockerize your project later. But if you only have a little PHP project u are able to use the mostly available /public folder to deploy your frontend in there. I hope this little idea was helpfull.
+With this solution in mind it is also easier maybe dockerize your project later. But if you only have a little PHP project u are able to use the mostly available /public folder to deploy your frontend in there. Therefor i put a index.php in the /public folder that you have to remove with the index.php from you backendframework. I hope this little idea was helpfull.
 
  
  ## Questions?
