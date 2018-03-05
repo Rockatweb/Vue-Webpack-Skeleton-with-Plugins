@@ -1,8 +1,8 @@
 const conf = {
     node_env: '"dev"',
     paths: {
-        'base': '/', // no configuration needed in dev
-        'img': '"/"', // no configuration needed in dev
+        'base': '/',
+        'img': '/',
         'baseUrl': '"/"', // no configuration needed in dev
         'api': '"http://*apiURL*/api/"' // if you have a Backend API put the path to it here
     },
