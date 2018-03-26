@@ -8,9 +8,6 @@ import VueLocalStorage from 'vue-local-storage';
 import moment from 'moment';
 
 
-/* import .sass-file */
-import './assets/scss/main.scss';
-
 /* import .less-file */
 import './assets/less/main.less';
 
@@ -27,6 +24,7 @@ Vue.use(VueAxios, axios);
 Vue.use(VueLocalStorage);
 
 Vue.config.productionTip = false;
+
 
 window.api = axios.create({
     baseURL: process.env.API_URL,

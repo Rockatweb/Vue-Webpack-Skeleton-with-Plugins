@@ -1,28 +1,41 @@
 <template>
     <div id="app">
-        <Navigation />
-
-        <router-view />
-
-        <Footer />
+        <calendar :events="events" />
     </div>
 </template>
 
+<style>
+    @import '~fullcalendar/dist/fullcalendar.css';
+</style>
+
 <script>
     import Functions from '../js/helpers/functions'
-    import Navigation from '../components/elements/navigation'
-    import Footer from '../components/elements/footer'
+    import Calendar from '../components/fullcalendar/calendar'
 
     export default {
         name: 'app',
         mixins: [Functions],
         components: {
-            Navigation,
-            Footer
+            Calendar
         },
         data() {
             return {
-
+                events: [
+                    {
+                        title  : 'event1',
+                        start  : '2018-03-26',
+                    },
+                    {
+                        title  : 'event2',
+                        start  : '2018-03-26',
+                        end    : '2018-03-28',
+                    },
+                    {
+                        title  : 'event3',
+                        start  : '2018-03-26T12:30:00',
+                        allDay : false,
+                    },
+                ]
             }
         },
         methods: {
