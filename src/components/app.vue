@@ -1,6 +1,9 @@
 <template>
     <div id="app">
         <calendar :events="events" />
+
+        <button @click="add()">Add</button>
+        {{ events.length }}
     </div>
 </template>
 
@@ -39,7 +42,15 @@
             }
         },
         methods: {
+            add() {
+                for ( let i = 0; i < 150; i++) {
+                    this.events.push({
+                        title  : 'event1',
+                        start  : '2018-03-26',
+                    });
+                }
 
+            }
         }
     }
 </script>
