@@ -1,3 +1,7 @@
+### Package is outdated!
+This package will not be maintained because its now easier to create projects with [Vue Cli UI](https://cli.vuejs.org/)
+
+
 # Vue Skeleton with Webpack
 
 This is a small skeleton for Webpack 3 with Vue.js 2.x
